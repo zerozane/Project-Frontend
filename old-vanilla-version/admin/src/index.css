@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Custom theme colors for Smart Campus Admin */
+@theme {
+  --color-primary: #00b573;
+  --color-primary-dark: #008a56;
+  --color-primary-darker: #006d42;
+  --color-sidebar-bg: #1a2332;
+  --color-sidebar-hover: #263448;
+  --color-card-bg: #ffffff;
+  --color-text-muted: #6b7280;
+}

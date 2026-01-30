@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>จัดการผู้ใช้งาน - Smart Campus Admin</title>
+  <link rel="stylesheet" href="css/mainstyle.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div style="display:flex; align-items:center;">
+        <img src="image/rmutt.png" alt="RMUTT logo" class="logo" />
+        <div class="top-title">ระบบแอปพลิเคชันแนะนำทางและค้นหาห้องเรียน</div>
+      </div>
+      <div class="user-menu">
+        <span class="user-icon">👤</span>
+        <span class="user-name">ผู้ดูแลระบบ</span>
+        <a href="login.html" class="logout-btn" aria-label="logout">ออกจากระบบ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page" style="margin-top:32px;">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="buildings.html"><span class="nav-icon">🏢</span> จัดการอาคาร/ห้อง</a></li>
+          <li class="active"><a href="users.html"><span class="nav-icon">👥</span> จัดการผู้ใช้งาน</a></li>
+          <li><a href="reports.html"><span class="nav-icon">📊</span> รายงาน</a></li>
+          <li><a href="feedback.html"><span class="nav-icon">💬</span> ข้อเสนอแนะ/รายงาน</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="panel">
+        <div
+          style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:20px;">
+          <h3 style="margin:0;">จัดการผู้ใช้งาน</h3>
+          <button class="btn btn-primary" onclick="openModal('add')">➕ เพิ่มผู้ใช้งาน</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="ค้นหา ชื่อ, รหัสผู้ใช้...">
+          </div>
+          <select class="btn btn-outline" style="width: auto;">
+            <option>ทั้งหมด</option>
+            <option>ใช้งานปกติ</option>
+            <option>ถูกระงับ</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ชื่อผู้ใช้</th>
+                <th>อีเมล</th>
+                <th style="width:120px">สิทธิ์</th>
+                <th style="width:100px">สถานะ</th>
+                <th style="width:140px; text-align:right;">การกระทำ</th>
+              </tr>
+            </thead>
+            <tbody id="usersTbody"></tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:flex-end; gap:5px;">
+          <button class="btn btn-sm btn-outline" disabled>« ก่อนหน้า</button>
+          <button class="btn btn-sm btn-primary">1</button>
+          <button class="btn btn-sm btn-outline">2</button>
+          <button class="btn btn-sm btn-outline">ถัดไป »</button>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">เพิ่มผู้ใช้งาน</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="userForm" style="padding:24px;">
+        <input type="hidden" id="userIndex">
+        <div class="form-group">
+          <label class="form-label">รหัสผู้ใช้</label>
+          <input class="input" type="text" id="userCode" placeholder="เช่น ADM-002" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ชื่อ-นามสกุล</label>
+          <input class="input" type="text" id="userName" placeholder="กรอกชื่อ" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">อีเมล</label>
+          <input class="input" type="email" id="userEmail" placeholder="email@rmutt.ac.th" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">สิทธิ์การใช้งาน</label>
+          <select class="input" id="userRole">
+            <option value="staff">Staff</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">สถานะ</label>
+          <select class="input" id="userStatus">
+            <option value="active">ปกติ</option>
+            <option value="disabled">ระงับ</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal()">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/users.js"></script>
+</body>
+
+</html>
