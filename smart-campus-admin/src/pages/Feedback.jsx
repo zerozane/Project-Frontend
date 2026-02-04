@@ -102,7 +102,7 @@ export default function Feedback() {
             <div className="bg-white rounded-2xl shadow-card p-6 border-t-4 border-pink-400">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center shadow-lg">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center shadow-lg shadow-pink-500/30">
                             <MessageSquare className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -165,8 +165,8 @@ export default function Feedback() {
                         <button
                             key={status}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filterStatus === status
-                                    ? 'bg-pink-500 text-white shadow-md'
-                                    : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                                ? 'bg-pink-500 text-white shadow-md'
+                                : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
                                 }`}
                             onClick={() => setFilterStatus(status)}
                         >

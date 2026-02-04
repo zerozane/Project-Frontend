@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Users, Building2, Search, TrendingUp, Eye, UserPlus, MapPin } from 'lucide-react';
+import { Users, Building2, Search, TrendingUp, Eye, UserPlus, MapPin, LayoutDashboard, CalendarDays } from 'lucide-react';
 import { StatCard } from '../components/ui/Card';
 import { BarChart, DonutChart } from '../components/charts';
 
@@ -112,11 +112,19 @@ export default function Dashboard() {
     return (
         <div className="space-y-6 animate-fade-in">
             {/* Professional Header */}
-            <div className="bg-white rounded-2xl shadow-card p-6">
+            <div className="bg-white rounded-2xl shadow-card p-6 border-t-4 border-sky-400">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <h1 className="text-2xl font-bold text-slate-800">Dashboard</h1>
-                        <p className="text-slate-500 text-sm">{currentData.periodLabel}</p>
+                    <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/30">
+                            <LayoutDashboard className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                            <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
+                            <p className="text-gray-500 text-sm flex items-center gap-1.5">
+                                <CalendarDays className="w-4 h-4" />
+                                {currentData.periodLabel}
+                            </p>
+                        </div>
                     </div>
 
                     {/* Period Selector */}

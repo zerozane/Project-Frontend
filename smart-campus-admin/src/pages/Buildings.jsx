@@ -287,19 +287,19 @@ export default function Buildings() {
     return (
         <div className="space-y-6 animate-fade-in">
             {/* Modern Header */}
-            <div className="bg-gradient-to-r from-slate-50 via-blue-50 to-indigo-50 rounded-2xl shadow-card p-6 border border-slate-100">
+            <div className="bg-white rounded-2xl shadow-card p-6 border-t-4 border-blue-400">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
                             <Building2 className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-slate-800">จัดการอาคาร/ห้อง</h1>
-                            <p className="text-slate-500 text-sm">เพิ่ม แก้ไข และจัดการข้อมูลสถานที่</p>
+                            <h1 className="text-2xl font-bold text-gray-800">จัดการอาคาร/ห้อง</h1>
+                            <p className="text-gray-500 text-sm">เพิ่ม แก้ไข และจัดการข้อมูลสถานที่</p>
                         </div>
                     </div>
                     <div className="flex gap-2 flex-wrap">
-                        <Button onClick={() => openBuildingModal()} className="bg-blue-600 hover:bg-blue-700">
+                        <Button onClick={() => openBuildingModal()} className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 shadow-md">
                             <Plus className="w-4 h-4" />
                             อาคาร
                         </Button>

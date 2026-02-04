@@ -164,28 +164,28 @@ export default function Reports() {
 
     return (
         <div className="space-y-6 animate-fade-in">
-            {/* Soft Colorful Header */}
-            <div className="bg-gradient-to-r from-slate-50 via-indigo-50 to-violet-50 rounded-2xl shadow-card p-6 border border-slate-100">
+            {/* Professional Header */}
+            <div className="bg-white rounded-2xl shadow-card p-6 border-t-4 border-indigo-400">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl shadow-md">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
                             <TrendingUp className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-slate-800">รายงาน</h1>
-                            <p className="text-indigo-600 text-sm">ข้อมูลย้อนหลัง {getPeriodLabel(period)}</p>
+                            <h1 className="text-2xl font-bold text-gray-800">รายงาน</h1>
+                            <p className="text-gray-500 text-sm">ข้อมูลย้อนหลัง {getPeriodLabel(period)}</p>
                         </div>
                     </div>
 
                     {/* Period Selector */}
-                    <div className="flex gap-1 bg-white p-1.5 rounded-xl shadow-sm border border-slate-200">
+                    <div className="flex gap-1 bg-slate-100 p-1.5 rounded-xl">
                         {periodOptions.map((opt) => (
                             <button
                                 key={opt.value}
                                 onClick={() => setPeriod(opt.value)}
                                 className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 ${period === opt.value
-                                    ? 'bg-indigo-500 text-white shadow-md'
-                                    : 'text-slate-500 hover:text-indigo-600 hover:bg-indigo-50'
+                                    ? 'bg-white text-slate-800 shadow-md'
+                                    : 'text-slate-500 hover:text-slate-700'
                                     }`}
                             >
                                 {opt.label}
